@@ -69,7 +69,6 @@ if (config.isSocketsEnabled) {
   echo.on('connection', (conn) => {
     connections.push(conn)
     conn.on('data', async () => {})
-
     conn.on('close', () => {
       connections = connections.filter((c) => c.readyState !== 3)
     })
