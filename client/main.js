@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import RootComponent from './root'
+import Root from './root'
 
 import './assets/scss/main.scss'
 
@@ -16,7 +16,7 @@ const render = (Component) => {
   )
 }
 
-render(RootComponent)
+render(Root)
 
 if (module.hot) {
   module.hot.accept('./root', () => {

@@ -4,7 +4,7 @@
 
 1. Clone this repo using:
   ```shell
-  $ git clone git@github.com:AlexanderParshin/boilerplate.git
+  $ git clone git@github.com:AlexanderParshin/simple-ecommerce.git
   ```
 
 2. To install dependencies and clean the git repo run:
