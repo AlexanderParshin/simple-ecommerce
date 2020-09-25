@@ -5,7 +5,7 @@ import { Route, Switch, StaticRouter } from 'react-router-dom'
 
 import store, { history } from './redux'
 
-import Index from './components'
+import Index from './components/home'
 import NotFound from './components/404'
 
 const RouterSelector = (props) =>

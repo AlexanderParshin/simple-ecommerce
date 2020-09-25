@@ -1,6 +1,6 @@
 
 const initialState = {
-  testProduct: 1
+  name: "test product"
 }
 
 export default (state=initialState, action) => {
