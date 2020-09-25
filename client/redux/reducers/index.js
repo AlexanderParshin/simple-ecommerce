@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
+import { connectRouter } from 'connected-react-router'
 import products from './products'
 
-const createRootReducer = () =>
+const createRootReducer = (history) =>
   combineReducers({
-    products
+    products,
+    router: connectRouter(history)
   })
 
 export default createRootReducer
