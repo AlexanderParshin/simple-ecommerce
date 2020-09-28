@@ -1,9 +1,16 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import Head from './head'
+import Header from './header'
+import CardProduct from './card-product'
 
 const Index = () => {
-  const productName = useSelector((s) => s.products.name)
-  return <div>{productName}</div>
+  return (
+    <div>
+      <Head />
+      <Header />
+      <CardProduct />
+    </div>
+  )
 }
 
 export default Index

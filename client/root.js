@@ -6,6 +6,8 @@ import { Route, Switch, StaticRouter } from 'react-router-dom'
 import store, { history } from './redux'
 
 import Index from './components/home'
+import Basket from './components/basket'
+import Logs from './components/logs-app'
 import NotFound from './components/404'
 
 const RouterSelector = (props) =>
@@ -17,6 +19,8 @@ const Root = (props) => {
       <RouterSelector history={history} location={props.location} context={props.context}>
         <Switch>
           <Route exact path="/" component={() => <Index />} />
+          <Route exact path="/basket" component={() => <Basket />} />
+          <Route exact path="/logs" component={() => <Logs />} />
           <Route component={() => <NotFound />} />
         </Switch>
       </RouterSelector>
