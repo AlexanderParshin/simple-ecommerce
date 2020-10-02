@@ -5,12 +5,39 @@ import bodyParser from 'body-parser'
 import sockjs from 'sockjs'
 import { renderToStaticNodeStream } from 'react-dom/server'
 import React from 'react'
+import mongoose from 'mongoose'
 
+
+// import mongooseService from './services/mongoose'
 import cookieParser from 'cookie-parser'
 import config from './config'
 import Html from '../client/html'
 
 const Root = () => ''
+
+
+const MONGO_URL =
+  'mongodb+srv://AlexanderParshin:z7vbMMUTW4aCDep@cluster0.tmhus.mongodb.net/simple_ecommerce?retryWrites=true&w=majority'
+
+mongoose.connect(MONGO_URL, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+})
+
+const productSchema = new mongoose.Schema({
+  id: String,
+  title: String,
+  image: String,
+  price: Number,
+  description: String
+})
+
+const Products = mongoose.model('products', productSchema)
+
+// const products = Products.find({}).exec().then(console.log)
+// console.log(products)
+
+// const MongooseConnect = mongooseService.connect()
 
 try {
   console.log(Root)
@@ -47,6 +74,12 @@ server.get('/', (req, res) => {
     res.write(htmlEnd)
     res.end()
   })
+})
+
+server.get('/api/v1/products', async (req, res) => {
+  const productsSend = await Products.find({})
+  // console.log(productsSend)
+  res.send(productsSend)
 })
 
 server.get('/*', (req, res) => {
