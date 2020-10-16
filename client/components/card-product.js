@@ -1,30 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import axios from 'axios'
 
-import { updeteProduct } from '../redux/reducers/products'
+
+import { getProductData } from '../redux/reducers/products'
 
 const CardProduct = () => {
-
-  const [products, setProducts] = useState([])
   const dispatch = useDispatch()
+  const products = useSelector((s) => s.products.list)
 
   useEffect(() => {
-    axios.get('/api/v1/products').then(({ data }) => {
-      // console.log('axios.get: ', data)
-      setProducts(data)
-      dispatch(updeteProduct(data))
-    })
+    dispatch(getProductData())
   }, [])
 
-  const productId = useSelector((s) => s.products)
-  // return <div>{JSON.stringify(products)}</div>
   return (
     <div>
-      <div>product - {productId.id}</div>
-      <div>productId - {JSON.stringify(productId)}</div>
+      <div>products - {products[0].id}</div>
       <div> ........................................................................ </div>
-      <div>{JSON.stringify(products)}</div>
+      <div> ........................................................................ </div>
+      <div>productId - {JSON.stringify(products)}</div>
     </div>
   )
 }

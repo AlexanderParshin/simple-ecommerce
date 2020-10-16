@@ -78,7 +78,7 @@ server.get('/', (req, res) => {
 
 server.get('/api/v1/products', async (req, res) => {
   const productsSend = await Products.find({})
-  // console.log(productsSend)
+  console.log('productsSend: ', productsSend)
   res.send(productsSend)
 })
 
