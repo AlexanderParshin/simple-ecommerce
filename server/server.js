@@ -6,18 +6,18 @@ import sockjs from 'sockjs'
 import { renderToStaticNodeStream } from 'react-dom/server'
 import React from 'react'
 import mongoose from 'mongoose'
+import cookieParser from 'cookie-parser'
 
+import settings from '../settings'
 
 // import mongooseService from './services/mongoose'
-import cookieParser from 'cookie-parser'
 import config from './config'
 import Html from '../client/html'
 
 const Root = () => ''
 
 
-const MONGO_URL =
-  'mongodb+srv://AlexanderParshin:z7vbMMUTW4aCDep@cluster0.tmhus.mongodb.net/simple_ecommerce?retryWrites=true&w=majority'
+const MONGO_URL = `mongodb+srv://${settings.login}:${settings.password}@cluster0.tmhus.mongodb.net/simple_ecommerce?retryWrites=true&w=majority`
 
 mongoose.connect(MONGO_URL, {
   useUnifiedTopology: true,
@@ -47,7 +47,7 @@ try {
 
 let connections = []
 
-const port = process.env.PORT || 8090
+const port = process.env.PORT || 8091
 const server = express()
 
 const middleware = [

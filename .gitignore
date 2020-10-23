@@ -68,3 +68,5 @@ yarn-error.log
 *.csv
 server/users.json
 server/user_add.json
+
+settings.js
