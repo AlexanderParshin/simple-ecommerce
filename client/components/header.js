@@ -40,14 +40,13 @@ const Header = () => {
                 <div className="md:mx-1">USD</div>
                 <div className="md:mx-1">CAD</div>
               </div>
-
               <div className="flex flex-col md:flex-row md:mx-6">
-                <a
+                <Link
                   className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0"
-                  href="#"
+                  to="/"
                 >
                   Home
-                </a>
+                </Link>
                 <a
                   className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0"
                   href="#"
