@@ -8,7 +8,7 @@ const Product = (props) => {
   const dispatch = useDispatch()
   const {id} = props.product
 
-  const productBasketID = useSelector((s) => s.basketProducts)
+  const productBasketID = useSelector((s) => s.basketProducts.list)
   console.log(productBasketID)
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Product = (props) => {
           <div className="flex-shrink-0">
             <img
               className="items-center object-scale-down h-30"
-              src={props.product.image}
+              // src={props.product.image}
               alt={props.product.title}
             />
             <div className="text-xs font-bold uppercase text-teal-700 mt-1 mb-2">

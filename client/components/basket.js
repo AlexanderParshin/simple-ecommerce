@@ -1,16 +1,19 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import Header from './header'
+import OneProductBasket from './one_product_basket'
 
 const Basket = () => {
 
-  // const products = useSelector((s) => s.products.list)
+  const basketProductsId = useSelector((s) => s.basketProducts)
+  console.log(basketProductsId)
 
   return (
     <div>
       <Header />
       basket
+      <OneProductBasket />
     </div>
   )
 }

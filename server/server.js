@@ -82,6 +82,14 @@ server.get('/api/v1/products', async (req, res) => {
   res.send(productsSend)
 })
 
+server.post('/api/v1/products/listId', async (req, res) => {
+  const listId = await req.body
+  console.log('listId: ', listId)
+  const productsSend = await Products.find({})
+  console.log('productsSend: ', productsSend)
+  res.send(productsSend)
+})
+
 server.get('/*', (req, res) => {
   const initialState = {
     location: req.url

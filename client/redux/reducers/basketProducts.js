@@ -2,23 +2,35 @@
 const UPDATE_BASKET = 'UPDATE_BASKET'
 const DEL_PRODUCT_TO_BASKET = 'DEL_PRODUCT_TO_BASKET'
 
-const initialState = { type: DEL_PRODUCT_TO_BASKET, id: '0' }
+// const initialState = {id: 0}
+const initialState = { list: {id: 0} }
+// const initialState = { type: DEL_PRODUCT_TO_BASKET, id: 0}
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_BASKET: {
       // const id = action.id
       // const addBasket = { [id] : 1}
-      const newProductsBasket = { ...state, ...{ [action.id]: 1 } }
+      // list: action.list
+      // const newProductsBasket = { ...state, ...{ [action.id]: 1 } }
+      // const addBasket = { ...state, ...action.list }
+
+      const { id } = action
+      const newId = { [id]: 1 }
+      const newIdList = { list: {...state.list, ...newId} }
+      const newProductsBasket = { ...state, ...newIdList }
       console.log(newProductsBasket)
       return newProductsBasket
+
+      // state[action.id] = 1
+      // return state
     }
     case DEL_PRODUCT_TO_BASKET: {
-      // const id = action.id
-      // const addBasket = { [id] : 0}
-      const newProductsBasket = { ...state, ...{ [action.id]: 0 } }
-      // state[id] = 0
-      // console.log(newProductsBasket)
+      const { id } = action
+      const newId = { [id]: 0 }
+      const newIdList = { list: {...state.list, ...newId} }
+      const newProductsBasket = { ...state, ...newIdList }
+      console.log(newProductsBasket)
       return newProductsBasket
     }
     default:
