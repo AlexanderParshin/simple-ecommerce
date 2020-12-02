@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
-  const numberItemsCart = 0
+  const basketProductsId = useSelector((s) => s.basketProducts.list)
+  const numberItemsCart = Object.values(basketProductsId).reduce((acc, sum) => acc + sum, 0)
   return (
     <div>
       <div>
@@ -83,18 +85,14 @@ const Header = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-
-                  <span className="absolute top-0 left-0 rounded-full bg-indigo-500 text-white p-1 text-xs" />
+                  <span className="absolute top-0 left-0 rounded-full bg-indigo-500 text-white p-1 text-xs">
+                    {numberItemsCart}
+                  </span>
                 </Link>
               </div>
             </div>
           </div>
         </nav>
-      </div>
-      <div>
-        <Link to="/basket" id="order-count">
-          Cart: {numberItemsCart}
-        </Link>
       </div>
     </div>
   )

@@ -1,8 +1,12 @@
 import React from 'react'
 
 
-const OneProductBasket = () => {
-  return <div>1</div>
+const OneProductBasket = (props) => {
+  return (
+    <div>
+      <div>{props.product.title}</div>
+    </div>
+  )
 }
 
 export default OneProductBasket
