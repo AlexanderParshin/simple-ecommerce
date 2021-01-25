@@ -22,7 +22,13 @@ const Basket = () => {
       <Header />
       <div>
         {basketProducts.map((product) => {
-          return <OneProductBasket key={product.id} product={product} />
+          return (
+            <OneProductBasket
+              key={product.id}
+              product={product}
+              number={basketProductsId[product.id]}
+            />
+          )
         })}
       </div>
     </div>
