@@ -21,15 +21,28 @@ const Basket = () => {
     <div>
       <Header />
       <div>
-        {basketProducts.map((product) => {
-          return (
-            <OneProductBasket
-              key={product.id}
-              product={product}
-              number={basketProductsId[product.id]}
-            />
-          )
-        })}
+        <table>
+          <thead>
+            <tr>
+              <th> </th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Unit price</th>
+              <th>Total price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {basketProducts.map((product) => {
+              return (
+                <OneProductBasket
+                  key={product.id}
+                  product={product}
+                  number={basketProductsId[product.id]}
+                />
+              )
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   )
