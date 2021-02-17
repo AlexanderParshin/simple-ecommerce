@@ -10,7 +10,7 @@ const Basket = () => {
   const listProduct = useSelector((s) => s.products.list)
 
   const basketProducts = listProduct.filter((item) => {
-    return (basketProductsId[item.id] > 0)
+    return basketProductsId[item.id] > 0
   })
 
   console.log(basketProductsId)
@@ -24,7 +24,6 @@ const Basket = () => {
         <table>
           <thead>
             <tr>
-              <th> </th>
               <th>Product</th>
               <th>Quantity</th>
               <th>Unit price</th>
@@ -42,6 +41,16 @@ const Basket = () => {
               )
             })}
           </tbody>
+          <tfoot>
+            <tr>
+              <th>Total: </th>
+              <th>
+                {basketProducts.reduce((total, product) => {
+                  return total + basketProductsId[product.id] * product.price
+                }, 0)}
+              </th>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>

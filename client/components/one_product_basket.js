@@ -26,24 +26,9 @@ const OneProductBasket = (props) => {
       <td>{props.product.title}</td>
 
       <td>
-        <div className="w-20 h-10">
-          <div className="relative flex flex-row w-full h-8">
-            <input
-              type="number "
-              value=""
-              min="0"
-              step="1"
-              onChange
-              className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-            />
-          </div>
-        </div>
-      </td>
-
-      <td>
         <div className="flex flex-row border h-10 w-24 rounded-lg border-gray-400 relative">
           <button
-            className="font-semibold border-r bg-red-700 hover:bg-red-600 text-white border-gray-400 h-full
+            className="font-semibold border-r bg-gray-700 hover:bg-gray-600 text-white border-gray-400 h-full
         w-20 flex rounded-l focus:outline-none cursor-pointer"
             type="button"
             onClick={decNumberProduct}
@@ -61,7 +46,7 @@ const OneProductBasket = (props) => {
           </div>
 
           <button
-            className="font-semibold border-l  bg-blue-700 hover:bg-blue-600 text-white border-gray-400 h-full
+            className="font-semibold border-l  bg-gray-700 hover:bg-gray-600 text-white border-gray-400 h-full
         w-20 flex rounded-r focus:outline-none cursor-pointer"
             type="button"
             onClick={incNumberProduct}
@@ -75,7 +60,7 @@ const OneProductBasket = (props) => {
       <td>{props.product.price * props.number}</td>
       <td>
         <button
-          className="font-semibold border-l  bg-blue-700 hover:bg-blue-600 text-white border-gray-400 h-full
+          className="font-semibold border-l  bg-gray-700 hover:bg-gray-600 text-white border-gray-400 h-full
         w-20 flex rounded-r focus:outline-none cursor-pointer"
           type="button"
           onClick={delNumberProduct}
