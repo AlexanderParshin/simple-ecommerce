@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { incIdProduct, decIdProduct, delIdProduct } from '../redux/reducers/basketProducts'
 
-
 const OneProductBasket = (props) => {
   const dispatch = useDispatch()
   const { id } = props.product
