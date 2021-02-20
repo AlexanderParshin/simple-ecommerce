@@ -8,7 +8,7 @@ import React from 'react'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 
-import settings from '../settings'
+// import settings from '../settings'
 
 // import mongooseService from './services/mongoose'
 import config from './config'
@@ -17,7 +17,7 @@ import Html from '../client/html'
 const Root = () => ''
 
 
-const MONGO_URL = `mongodb+srv://${settings.login}:${settings.password}@cluster0.tmhus.mongodb.net/simple_ecommerce?retryWrites=true&w=majority`
+const MONGO_URL = `mongodb+srv://${process.env.LOGIN_BD}:${process.env.PASSWORD_BD}@cluster0.tmhus.mongodb.net/simple_ecommerce?retryWrites=true&w=majority`
 
 mongoose.connect(MONGO_URL, {
   useUnifiedTopology: true,
