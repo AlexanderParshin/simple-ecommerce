@@ -69,4 +69,4 @@ yarn-error.log
 server/users.json
 server/user_add.json
 
-.env.example
+.env
