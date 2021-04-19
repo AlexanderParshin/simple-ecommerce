@@ -16,18 +16,13 @@ const CardProduct = () => {
 
   return (
     <div>
-      <div className="">
-        <ul className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+      <div>
+        <ul className="md:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => {
             return <Product key={product.id} product={product} />
           })}
         </ul>
       </div>
-
-      <div>products - {products[0].id}</div>
-      <div> ........................................................................ </div>
-      <div> ........................................................................ </div>
-      <div>productId - {JSON.stringify(products)}</div>
     </div>
   )
 }

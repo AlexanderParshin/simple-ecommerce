@@ -8,7 +8,6 @@ import React from 'react'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 
-// import mongooseService from './services/mongoose'
 import config from './config'
 import Html from '../client/html'
 
@@ -33,11 +32,6 @@ const productSchema = new mongoose.Schema({
 })
 
 const Products = mongoose.model('products', productSchema)
-
-// const products = Products.find({}).exec().then(console.log)
-// console.log(products)
-
-// const MongooseConnect = mongooseService.connect()
 
 try {
   console.log(Root)

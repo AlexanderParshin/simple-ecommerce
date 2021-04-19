@@ -27,12 +27,6 @@ export default (state=initialState, action) => {
   }
 }
 
-/*
-export function updeteProduct(data) {
-  return {type: UPDATE_PRODUCT, data}
-}
-*/
-
 export function getProductData() {
   return async (dispatch) => {
     await axios.get('/api/v1/products').then(({ data }) => {

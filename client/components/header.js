@@ -69,7 +69,7 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex justify-center md:block">
+              <div className="flex md:block">
                 <Link className="relative text-gray-700 hover:text-gray-600" to="/basket">
                   <svg
                     className="h-5 w-5"

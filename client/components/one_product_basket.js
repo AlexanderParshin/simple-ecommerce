@@ -21,7 +21,6 @@ const OneProductBasket = (props) => {
 
   return (
     <tr>
-      <td> </td>
       <td>{props.product.title}</td>
 
       <td>
@@ -72,10 +71,3 @@ const OneProductBasket = (props) => {
 }
 
 export default OneProductBasket
-
-/*
-      <div className="ml-2">{props.product.image}</div>
-      <div className="">{props.product.title}</div>
-      <div className="">{props.product.price}</div>
-      <div className="mr-2">{props.number}</div>
-*/
