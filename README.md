@@ -5,9 +5,9 @@
 ## Quick start
 
 The application is deployed on heroku
- ```shell
+  ```shell
   https://simple-ecommerce181186.herokuapp.com/
-```
+  ```
 
 ## If you want to deploy yourself
 
